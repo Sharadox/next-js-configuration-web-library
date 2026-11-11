@@ -6,4 +6,4 @@
 - Sass loadPaths: node_modules/<styleLibrary>/distribution, src
 - redirects: *.vercel.app → https://<productionDomain>/:path* (308) when productionDomain is set; "/" → remembered/browser/default locale; then next.redirects()
 - headers: X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, X-Frame-Options DENY, Permissions-Policy (no camera/mic/geo/payment); then next.headers()
-- Licence: Sharadox Open Source Licence 0.1.0
+- License: Sharadox Open Source License 0.1.0
