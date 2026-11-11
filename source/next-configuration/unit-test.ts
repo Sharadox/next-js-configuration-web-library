@@ -27,7 +27,7 @@ describe("defineNextConfiguration", () => {
       source: "/:path*",
       has: [{ type: "host", value: ".*\\.vercel\\.app" }],
       destination: "https://sharadox.com/:path*",
-      permanent: true,
+      permanent: false,
     });
     expect(redirects.at(-1)).toEqual({ source: "/", destination: "/en", permanent: false });
     expect(redirects).toHaveLength(5);
@@ -49,13 +49,13 @@ describe("defineNextConfiguration", () => {
       next: {
         poweredByHeader: false,
         sassOptions: { silenceDeprecations: ["import"] },
-        redirects: async () => [{ source: "/old", destination: "/new", permanent: true }],
+        redirects: async () => [{ source: "/old", destination: "/new", permanent: false }],
         headers: async () => [{ source: "/a", headers: [{ key: "X-A", value: "1" }] }],
       },
     });
     expect(configuration.poweredByHeader).toBe(false);
     expect(configuration.sassOptions).toMatchObject({ silenceDeprecations: ["import"] });
-    expect(await configuration.redirects!()).toEqual([{ source: "/old", destination: "/new", permanent: true }]);
+    expect(await configuration.redirects!()).toEqual([{ source: "/old", destination: "/new", permanent: false }]);
     expect((await configuration.headers!())[1]).toEqual({ source: "/a", headers: [{ key: "X-A", value: "1" }] });
   });
 });
