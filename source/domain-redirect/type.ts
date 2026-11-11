@@ -3,5 +3,5 @@ export interface DomainRedirect {
   source: string;
   has: { type: "host"; value: string }[];
   destination: string;
-  permanent: true;
+  permanent: false;
 }

@@ -5,7 +5,7 @@ The Next.js configuration every Sharadox-style application shares, in one call:
 - **Sass:** `src/` and the site library's `distribution/` are on the load path, so `@use "style/token"` finds the library's design helpers.
 - **Languages:** `/` redirects to the language the visitor picked before, then their browser's, then the default (`@sharadox/internationalization-web-library`).
 - **Security headers on every page:** `nosniff`, a strict referrer policy, no framing, no camera, microphone, geolocation or payment.
-- **Real domain only:** once the site has its own domain, every `*.vercel.app` address (the project alias and each deployment) redirects permanently to the same path on it.
+- **Real domain only:** once the site has its own domain, every `*.vercel.app` address (the project alias and each deployment) redirects to the same path on it. Every redirect is temporary (307), so browsers never keep it and any address can be used again later.
 
 ## Install
 

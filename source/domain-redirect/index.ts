@@ -2,10 +2,11 @@ import type { DomainRedirect } from "@sharadox/next-js-configuration-web-library
 
 /**
  * Sends every `*.vercel.app` address (the project's alias and each deployment's own address) to the same path on
- * the real domain, permanently, so the site is reachable only on its own domain.
+ * the real domain, so the site is reachable only on its own domain. Temporary on purpose: browsers don't keep it,
+ * so the addresses can be used again later.
  *
  * @example
- * vercelAppRedirect("sharadox.com"); // [{ source: "/:path*", has: [{ type: "host", value: ".*\\.vercel\\.app" }], destination: "https://sharadox.com/:path*", permanent: true }]
+ * vercelAppRedirect("sharadox.com"); // [{ source: "/:path*", has: [{ type: "host", value: ".*\\.vercel\\.app" }], destination: "https://sharadox.com/:path*", permanent: false }]
  */
 export function vercelAppRedirect(productionDomain: string): DomainRedirect[] {
   return [
@@ -13,7 +14,7 @@ export function vercelAppRedirect(productionDomain: string): DomainRedirect[] {
       source: "/:path*",
       has: [{ type: "host", value: ".*\\.vercel\\.app" }],
       destination: `https://${productionDomain}/:path*`,
-      permanent: true,
+      permanent: false,
     },
   ];
 }

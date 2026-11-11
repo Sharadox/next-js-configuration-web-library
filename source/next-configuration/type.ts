@@ -13,7 +13,7 @@ export interface NextConfigurationOptions<Locale extends string> {
   locales?: Locales<Locale>;
   /**
    * The real domain once the site has one (for example "sharadox.com"): every `*.vercel.app` address then
-   * redirects there permanently, so the site is only reachable on its own domain.
+   * redirects there (temporarily, so it can be undone), so the site is only reachable on its own domain.
    */
   productionDomain?: string;
   /** Anything else for Next.js; merged over these settings. */
