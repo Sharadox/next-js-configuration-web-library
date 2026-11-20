@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@sharadox/internationalization-web-library':
-        specifier: ^0.1.0
-        version: 0.1.0(next@16.4.5(@babel/core@7.29.13)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+        specifier: ^0.2.3
+        version: 0.2.3(next@16.4.5(@babel/core@7.29.13)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       '@sharadox/web-library':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^0.8.0
+        version: 0.8.0
     devDependencies:
       '@sharadox/es-lint-configuration-web-library':
         specifier: ^0.1.1
@@ -568,9 +568,9 @@ packages:
       eslint-config-next:
         optional: true
 
-  '@sharadox/internationalization-web-library@0.1.0':
-    resolution: {integrity: sha512-9JW44ydVqRN5175cZmWWZfl1D/ZNyUZ6TKrXCh8PvHPiaZJGTj4ycFDyk6X4kGdSkcN/mrx2CkpkNFmA7+3o6Q==}
-    engines: {node: '>=24'}
+  '@sharadox/internationalization-web-library@0.2.3':
+    resolution: {integrity: sha512-Q9p5R5+bCFQ80V8A5v2Klle+wMtJ1x0X+4ebMM+CaVlGAlgJxuodp887AeE4oggHfD4GMXzM2DzEe+mlboDcow==}
+    engines: {node: '>=26'}
     peerDependencies:
       next: '>=16'
       react: '>=19'
@@ -599,9 +599,13 @@ packages:
       '@vitest/coverage-v8': '>=5'
       vitest: '>=5'
 
-  '@sharadox/web-library@0.5.0':
-    resolution: {integrity: sha512-umMmDM2MtqUO9F+d6B2YUK9yljoh+mn5vBTTd1CLXNboqtInYi1ak8sntIAkiMe0MsIOOlZV9g2QStXUJUiWCQ==}
-    engines: {node: '>=24'}
+  '@sharadox/web-library@0.6.1':
+    resolution: {integrity: sha512-Kdst79Jngq340Qv0FpyCwaF4wvxduCJMqBKJ2qums09NPKJGWSnSTrM+yV/jNQmxx/lcOErZOuRGfzAqDn+SoQ==}
+    engines: {node: '>=26'}
+
+  '@sharadox/web-library@0.8.0':
+    resolution: {integrity: sha512-5lqIUC05HtOmaUlnmZtxHCWyWcbziZqNfI761eCHYv1vZmcZifgATBSBaqgkk77zSHvoapLenQJrFocKWdTOtA==}
+    engines: {node: '>=26'}
 
   '@shikijs/engine-oniguruma@3.23.0':
     resolution: {integrity: sha512-1nWINwKXxKKLqPibT5f4pAFLej9oZzQTsby8942OTlsJzOBZ0MWKiwzMsd+jhzu8YPCHAswGnnN1YtQfirL35g==}
@@ -1992,9 +1996,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sharadox/internationalization-web-library@0.1.0(next@16.4.5(@babel/core@7.29.13)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
+  '@sharadox/internationalization-web-library@0.2.3(next@16.4.5(@babel/core@7.29.13)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@sharadox/web-library': 0.5.0
+      '@sharadox/web-library': 0.6.1
       next: 16.4.5(@babel/core@7.29.13)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
 
@@ -2019,7 +2023,9 @@ snapshots:
       - oxc-transform-react
       - vite
 
-  '@sharadox/web-library@0.5.0': {}
+  '@sharadox/web-library@0.6.1': {}
+
+  '@sharadox/web-library@0.8.0': {}
 
   '@shikijs/engine-oniguruma@3.23.0':
     dependencies:
