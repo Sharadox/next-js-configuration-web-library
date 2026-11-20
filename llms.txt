@@ -7,4 +7,6 @@
 - redirects (all temporary, never permanent): *.vercel.app → https://<productionDomain>/:path* when productionDomain is set; "/" and addresses without a language → remembered/browser/default locale; then next.redirects()
 - experimental.globalNotFound is on (one 404 for addresses outside every route: src/app/global-not-found.tsx); next.experimental can override
 - headers: X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, X-Frame-Options DENY, Permissions-Policy (no camera/mic/geo/payment); then next.headers()
+- /domain-redirect: vercelAppRedirect(domain): every *.vercel.app address to the same path on the real domain, temporarily
+- /security-header: SECURITY_HEADERS: no MIME sniffing, private referrers, no framing, no powerful features
 - License: Sharadox Open Source License 0.1.0
