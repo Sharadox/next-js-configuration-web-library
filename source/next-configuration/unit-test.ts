@@ -8,15 +8,19 @@ const root = new URL("file:///site/");
 const LOCALES = defineLocales({ locales: ["en", "pt"], defaultLocale: "en" });
 
 describe("defineNextConfiguration", () => {
-  test("puts the site library's design helpers and src/ on the Sass load path", () => {
+  test("puts the site library's design helpers, src/ and the shared Sass helpers on the Sass load path", () => {
     expect(defineNextConfiguration({ root, styleLibrary: "@sharadox/sharadox-web-library" }).sassOptions).toEqual({
       loadPaths: [
         fileURLToPath("file:///site/node_modules/@sharadox/sharadox-web-library/distribution"),
         fileURLToPath("file:///site/src"),
+        fileURLToPath("file:///site/node_modules/@sharadox/style-web-library/distribution"),
       ],
     });
     expect(defineNextConfiguration({ root: "file:///other/" }).sassOptions).toEqual({
-      loadPaths: [fileURLToPath("file:///other/src")],
+      loadPaths: [
+        fileURLToPath("file:///other/src"),
+        fileURLToPath("file:///other/node_modules/@sharadox/style-web-library/distribution"),
+      ],
     });
   });
 
