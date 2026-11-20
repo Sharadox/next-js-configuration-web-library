@@ -26,6 +26,8 @@ export function defineNextConfiguration<Locale extends string>({
   const loadPaths = [...(styleLibrary ? [path(`node_modules/${styleLibrary}/distribution`)] : []), path("src")];
   return {
     ...next,
+    // One 404 page for addresses outside every route too (each site's src/app/global-not-found.tsx).
+    experimental: { globalNotFound: true, ...next.experimental },
     sassOptions: { loadPaths, ...next.sassOptions },
     async redirects() {
       return [

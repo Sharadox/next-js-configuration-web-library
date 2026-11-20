@@ -61,3 +61,11 @@ describe("defineNextConfiguration", () => {
     expect((await configuration.headers!())[1]).toEqual({ source: "/a", headers: [{ key: "X-A", value: "1" }] });
   });
 });
+
+test("turns on the global 404 page, keeping the site's own experimental settings", () => {
+  expect(defineNextConfiguration({ root: new URL("file:///site/") }).experimental).toEqual({ globalNotFound: true });
+  expect(
+    defineNextConfiguration({ root: new URL("file:///site/"), next: { experimental: { globalNotFound: false } } })
+      .experimental,
+  ).toEqual({ globalNotFound: false });
+});
