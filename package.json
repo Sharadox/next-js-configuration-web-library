@@ -1,6 +1,6 @@
 {
   "name": "@sharadox/next-js-configuration-web-library",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "The shared Next.js configuration: Sass load paths for a site library's design helpers, locale redirects, security headers and permanent redirects from vercel.app addresses to the real domain.",
   "private": false,
   "license": "SEE LICENSE IN LICENCA.md",
@@ -25,7 +25,8 @@
     "LICENCA.md",
     "LICENSE.md",
     "NOTICE.md",
-    "llms.txt"
+    "llms.txt",
+    "CHANGELOG.md"
   ],
   "sideEffects": false,
   "engines": {

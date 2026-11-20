@@ -23,7 +23,12 @@ export function defineNextConfiguration<Locale extends string>({
   next = {},
 }: NextConfigurationOptions<Locale>): NextConfig {
   const path = (relative: string) => fileURLToPath(new URL(relative, root));
-  const loadPaths = [...(styleLibrary ? [path(`node_modules/${styleLibrary}/distribution`)] : []), path("src")];
+  const loadPaths = [
+    ...(styleLibrary ? [path(`node_modules/${styleLibrary}/distribution`)] : []),
+    path("src"),
+    // style-web-library's shared Sass helpers, which the site library's tokens forward (`@use "style-helper"`).
+    path("node_modules/@sharadox/style-web-library/distribution"),
+  ];
   return {
     ...next,
     // One 404 page for addresses outside every route too (each site's src/app/global-not-found.tsx).
