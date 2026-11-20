@@ -10,3 +10,4 @@
 - /domain-redirect: vercelAppRedirect(domain): every *.vercel.app address to the same path on the real domain, temporarily
 - /security-header: SECURITY_HEADERS: no MIME sniffing, private referrers, no framing, no powerful features
 - License: Sharadox Open Source License 0.1.0
+- Sass load path also includes node_modules/@sharadox/style-web-library/distribution (`@use "style-helper"`)
