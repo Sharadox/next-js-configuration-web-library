@@ -20,7 +20,7 @@ describe("defineNextConfiguration", () => {
     });
   });
 
-  test("redirects vercel.app to the real domain, then / to the visitor's language", async () => {
+  test("redirects vercel.app to the real domain, then any address without a language to the visitor's language", async () => {
     const redirects = await defineNextConfiguration({ root, locales: LOCALES, productionDomain: "sharadox.com" })
       .redirects!();
     expect(redirects[0]).toEqual({
@@ -29,8 +29,10 @@ describe("defineNextConfiguration", () => {
       destination: "https://sharadox.com/:path*",
       permanent: false,
     });
-    expect(redirects.at(-1)).toEqual({ source: "/", destination: "/en", permanent: false });
-    expect(redirects).toHaveLength(5);
+    // The root and every address without a language go to the visitor's language, always temporarily.
+    expect(redirects).toContainEqual({ source: "/", destination: "/en", permanent: false });
+    expect(redirects.at(-1)).toMatchObject({ destination: "/en/:path", permanent: false });
+    expect(redirects.every((redirect) => redirect.permanent === false)).toBe(true);
   });
 
   test("adds no redirects for a site without locales or a domain yet", async () => {
