@@ -1,6 +1,6 @@
 {
   "name": "@sharadox/next-js-configuration-web-library",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The shared Next.js configuration: Sass load paths for a site library's design helpers, locale redirects, security headers and permanent redirects from vercel.app addresses to the real domain.",
   "private": false,
   "license": "SEE LICENSE IN LICENCA.md",
@@ -61,11 +61,11 @@
   },
   "homepage": "https://github.com/Sharadox/next-js-configuration-web-library#readme",
   "devDependencies": {
-    "@sharadox/es-lint-configuration-web-library": "^0.1.2",
-    "@sharadox/prettier-configuration-web-library": "^0.1.1",
-    "@sharadox/turborepo-configuration-web-library": "^0.1.3",
-    "@sharadox/type-script-configuration-web-library": "^0.2.2",
-    "@sharadox/vitest-configuration-web-library": "^0.1.4",
+    "@sharadox/es-lint-configuration-web-library": "^0.1.3",
+    "@sharadox/prettier-configuration-web-library": "^0.1.2",
+    "@sharadox/turborepo-configuration-web-library": "^0.1.4",
+    "@sharadox/type-script-configuration-web-library": "^0.2.3",
+    "@sharadox/vitest-configuration-web-library": "^0.2.1",
     "@types/node": "^26.6.6",
     "@vitest/coverage-v8": "^5.1.1",
     "eslint": "9.39.5",
@@ -79,8 +79,8 @@
     "vitest": "^5.1.1"
   },
   "dependencies": {
-    "@sharadox/internationalization-web-library": "^0.2.3",
-    "@sharadox/web-library": "^0.8.0"
+    "@sharadox/internationalization-web-library": "^0.4.1",
+    "@sharadox/web-library": "^0.11.1"
   },
   "peerDependencies": {
     "next": ">=16"
